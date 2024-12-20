@@ -31,7 +31,7 @@
         {
             "language": "markdown",
             "source": [
-                "### Exercício 1 - Soma de Array\nEscreva uma função sumArray que soma todos os números de um array.\n\nMotivação: cada dSFU vai ter uma quantidade de viewers diferente, precisamos saber o total de viewers na live, então somaremos todos os viewers de cada dSFU.\n\nExemplo: [1, 2, 3] → 6\n\n3 dSFUs, o primeiro com 1, o segundo com 2 e o terceiro com 3 viewers. \n\n**Total da live: 6 viewers**"
+                "### Exercício 1 - Soma de Array\n\n- [Learn JavaScript ARRAYS in 8 minutes! 🗃](https://youtu.be/yQ1fz8LY354?list=PLVmZ-j8-bvc_-RuWxI2TDRdxQACRiWA8V)\n- [Learn JavaScript FOR LOOPS in 5 minutes! 🔂](https://youtu.be/ZOQYIWLngSU?list=PLVmZ-j8-bvc_-RuWxI2TDRdxQACRiWA8V)\n\n\nEscreva uma função sumArray que soma todos os números de um array.\n\nMotivação: cada dSFU vai ter uma quantidade de viewers diferente, precisamos saber o total de viewers na live, então somaremos todos os viewers de cada dSFU.\n\nExemplo: [1, 2, 3] → 6\n\n3 dSFUs, o primeiro com 1, o segundo com 2 e o terceiro com 3 viewers. \n\n**Total da live: 6 viewers**"
             ],
             "outputs": []
         },
@@ -73,7 +73,7 @@
         {
             "language": "markdown",
             "source": [
-                "### Exercício 4 - Checar Palíndromo \nEscreva uma função isPalindrome que verifica se uma string é um palíndromo.\nExemplo: \"radar\" → true\n\n**Observação: espaços, hífens, etc não devem ser considerados**\n**Observação 2: maiúsculas não devem ser diferenciadas de minúsculas**"
+                "### Exercício 4 - Checar Palíndromo \n\nDica: [Tipo 1](https://www.youtube.com/shorts/NR3efIxx78c?feature=share)\n\nEscreva uma função isPalindrome que verifica se uma string é um palíndromo.\nExemplo: \"radar\" → true\n\n**Observação: espaços, hífens, etc não devem ser considerados**\n**Observação 2: maiúsculas não devem ser diferenciadas de minúsculas**"
             ],
             "outputs": []
         },

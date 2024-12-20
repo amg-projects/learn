@@ -31,7 +31,7 @@
         {
             "language": "markdown",
             "source": [
-                "### Exercício 1 - Maior Número em um Array \nEscreva uma função maxNumber que encontra o maior número em um array.\n\nMotivador: encontrar a melhor qualidade entre os dSFUs e retornar a melhor opção para transmitir a live\n\nExemplo: [10, 20, 30] → 30\n\nA melhor qualidade disponível é 30 (seja la oq 30 significa)"
+                "### Exercício 1 - Maior Número em um Array \n\n- [Learn JavaScript ARRAYS in 8 minutes! 🗃](https://youtu.be/yQ1fz8LY354?list=PLVmZ-j8-bvc_-RuWxI2TDRdxQACRiWA8V)\n- [Learn JavaScript FOR LOOPS in 5 minutes! 🔂](https://youtu.be/ZOQYIWLngSU?list=PLVmZ-j8-bvc_-RuWxI2TDRdxQACRiWA8V)\n\n\nEscreva uma função maxNumber que encontra o maior número em um array.\n\nMotivador: encontrar a melhor qualidade entre os dSFUs e retornar a melhor opção para transmitir a live\n\nExemplo: [10, 20, 30] → 30\n\nA melhor qualidade disponível é 30 (seja la oq 30 significa)"
             ],
             "outputs": []
         },
@@ -73,7 +73,7 @@
         {
             "language": "markdown",
             "source": [
-                "### Exercício 4 - Verificar Número Primo \n\nEscreva uma função isPrime que verifica se um número é primo.\n\nExemplo: 7 → true, 10 → false"
+                "### Exercício 4 - Verificar Número Primo \n\n- [How to check if a number is prime in JavaScript](https://youtu.be/NHEaYbDWyQE?t=9)\n- [Check if an Integer is Divisible By Five using JavaScript](https://www.youtube.com/shorts/u7csa0ySiSI?feature=share)\n- [What is a Prime Number? ](https://youtu.be/1xHbTDuXB5o?t=6)\n- [Easy way to check for a prime](https://youtu.be/VwsN8mhffnA?t=406)\n- [Wasmanyack Theorem (Advanced Calculus)](https://www.youtube.com/shorts/L5EWvj8wu_c?feature=share)\n\nEscreva uma função isPrime que verifica se um número é primo.\n\nExemplo: 7 → true, 10 → false"
             ],
             "outputs": []
         },
