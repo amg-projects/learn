@@ -1,0 +1,88 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "###### Funções usadas nos testes, não mexer"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// Tipos usados para o marucs testar seus exercícios, não altere os tipos desse bloco para não atrapalhar seus exercícios\ntype TestCase<TInput, TOutput> = {\n    input: TInput;\n    expectedOutput: TOutput;\n};\n\ntype TestFunction<TInput, TOutput> = (input: TInput) => TOutput;\n\nfunction runTests<TInput, TOutput>(\n    exerciseName: string,\n    testCases: TestCase<TInput, TOutput>[],\n    testFunction: TestFunction<TInput, TOutput>\n) {\n    try {\n\n        const messages: string[] = []\n        for (const { input, expectedOutput } of testCases) {\n            const result = testFunction(input);\n            const inputJson = JSON.stringify(input);\n            const resultJson = JSON.stringify(result);\n            const expectedOutputJson = JSON.stringify(expectedOutput);\n            const isCorrect = resultJson === expectedOutputJson;\n            messages.push(isCorrect ? `✅ ${exerciseName}: \\`${inputJson}\\` → \\`${expectedOutputJson}\\`` : `❌: ${exerciseName}: \\`${inputJson}\\` → Era para ser \\`${expectedOutputJson}\\`, mas deu: \\`${resultJson}\\``) // ✅\n        };\n        console.log(messages.join('\\n'));\n    } catch (error) {\n        console.error(error);\n    }\n}\n\nrunTests('isEven', [{ input: 2, expectedOutput: true }, { input: 3, expectedOutput: false }], (number: number) => number % 2 === 0);"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Exercício 0 - Fibonacci\n$ fib(n) = fib(n-1) + fib(n-2) $\n\n\nExercício que já resolvemos no passado"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function fibonacci(n: number): number  {\n    // Resolução pronta\n    if (n < 0) throw new Error('não existe fibonacci negativo');\n    if (n === 0) return 0;\n    if (n === 1) return 1;\n    return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\n// --- Não altere o código abaixo ---\n// Testes do marucs, eles verificam se a função sumArray está correta\nconst fibonacciTestCases: TestCase<Parameters<typeof fibonacci>[0], ReturnType<fibonacci>>[] = [\n    { input: 0, expectedOutput: 0 },\n    { input: 1, expectedOutput: 1 },\n    { input: 2, expectedOutput: 1 },\n    { input: 3, expectedOutput: 2 },\n    { input: 4, expectedOutput: 3 },\n    { input: 5, expectedOutput: 5 },\n    { input: 6, expectedOutput: 8 },\n    { input: 7, expectedOutput: 13 },\n    { input: 8, expectedOutput: 21 },\n    { input: 9, expectedOutput: 34 },\n    { input: 10, expectedOutput: 55 },\n    { input: 11, expectedOutput: 89 },\n    { input: 20, expectedOutput: 6765 },\n]\n\nrunTests('fibonacci', fibonacciTestCases, fibonacci);"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Exercício 1 - Maior Número em um Array \nEscreva uma função maxNumber que encontra o maior número em um array.\n\nMotivador: encontrar a melhor qualidade entre os dSFUs e retornar a melhor opção para transmitir a live\n\nExemplo: [10, 20, 30] → 30\n\nA melhor qualidade disponível é 30 (seja la oq 30 significa)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function getBestQuality(dsfuQualityList: number[]): number {\n    let bestQuality = 0\n    // Seu código aqui\n    return bestQuality\n}\n\n// --- Não altere o código abaixo ---\n// Testes do marucs, eles verificam se a função sumArray está correta\nconst testCases: TestCase<Parameters<typeof getBestQuality>[0], ReturnType<typeof getBestQuality>>[] = [\n    { input: [1, 2, 3, 4, 5], expectedOutput: 5 },\n    { input: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], expectedOutput: 10 },\n    { input: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1], expectedOutput: 10 },\n    { input: [1, 2, 3, 4, 5, 10, 9, 8, 7, 6], expectedOutput: 10 },\n    { input: [1, 2, 3, 4, 5, 10, 9, 8, 7, 6, 10], expectedOutput: 10 },\n    { input: [-1, -2, -3, -4, -5], expectedOutput: -1 },\n    { input: [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10], expectedOutput: -1 },\n    { input: [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1], expectedOutput: -1 },\n    { input: [-5, -4, -9, -8, -7, -6], expectedOutput: -4 },\n    { input: [-5, -4, -9, 10, 43, 6], expectedOutput: 43 },\n    { input: [-5, -4, -9, 0, -1, -6], expectedOutput: 0 },\n];\n\nrunTests('getBestQuality', testCases, getBestQuality);"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Exercício 2 - Filtro de Números Maiores que 50\n\nEscreva uma função filterDSFUs que retorna apenas dSFUs com mais que 50 de qualidade\n\nExemplo: [20, 50, 51, 100, 99, 0, 20, 88] → [51, 100, 99, 88]"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// Filtra acima de 50\nfunction filterDsfuQuality(dsfuQualityList: number[]): number[] {\n    let filteredList = []\n    // Seu código aqui\n    return filteredList\n}\n\n// --- Não altere o código abaixo ---\n// Testes do marucs, eles verificam se a função sumArray está correta\nconst testCases: TestCase<[Parameters<typeof filterDsfuQuality>[0], number], ReturnType<typeof filterDsfuQuality>>[] = [\n    { input: [1, 2, 3, 4, 5], expectedOutput: [] },\n    { input: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], expectedOutput: [] },\n    { input: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100], expectedOutput: [60, 70, 80, 90, 100] },\n    { input: [41, 42, 43, 44, 45, 46, 47, 48, 49, 50], expectedOutput: [] },\n    { input: [49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60], expectedOutput: [51, 52, 53, 54, 55, 56, 57, 58, 59, 60] },\n    { input: [-1, -2, -3, -4, -5], expectedOutput: [] },\n    { input: [], expectedOutput: [] },\n]\n\nrunTests('filterDsfuQuality', testCases, filterDsfuQuality);"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Exercício 3 - Busca Linear \nCrie uma função linearSearch que verifica se o nome 'wally' está presente numa lista\n\nExemplo: ['nome1'] → false\n\nExemplo2: ['nome1', 'wally'] → true"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "const target = 'wally'\nfunction linearSearch(arr: string[]): boolean {\n    let hasTarget = false\n    // Seu código aqui\n    return hasTarget\n}\n\n// --- Não altere o código abaixo ---\n// Testes do marucs, eles verificam se a função sumArray está correta\nconst testCases: TestCase<Parameters<typeof linearSearch>[0], ReturnType<typeof linearSearch>>[] = [\n    { input: ['wally'], expectedOutput: true },\n    { input: ['wally', 'wally'], expectedOutput: true },\n    { input: ['not wally'], expectedOutput: false },\n    { input: ['not wally', 'not wally'], expectedOutput: false },\n    { input: ['not wally', 'wally'], expectedOutput: true },\n    { input: ['wally', 'not wally'], expectedOutput: true },\n    { input: [], expectedOutput: false },\n    { input: 'abcde'.split(''), expectedOutput: false },\n]\n\nrunTests('linearSearch', testCases, linearSearch);"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Exercício 4 - Verificar Número Primo \n\nEscreva uma função isPrime que verifica se um número é primo.\n\nExemplo: 7 → true, 10 → false"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function isPrime(num: number): boolean {\n    let prime = true\n    // Seu código aqui\n    return prime\n}\n\n// --- Não altere o código abaixo ---\n// Testes do marucs, eles verificam se a função sumArray está correta\nconst testCases: TestCase<Parameters<typeof isPrime>[0], ReturnType<typeof isPrime>>[] = [\n    { input: 1, expectedOutput: false },\n    { input: 2, expectedOutput: true },\n    { input: 3, expectedOutput: true },\n    { input: 4, expectedOutput: false },\n    { input: 5, expectedOutput: true },\n    { input: 6, expectedOutput: false },\n    { input: 7, expectedOutput: true },\n    { input: 8, expectedOutput: false },\n    { input: 9, expectedOutput: false },\n    { input: 10, expectedOutput: false },\n    { input: 11, expectedOutput: true },\n    { input: Math.pow(2, 7) - 1, expectedOutput: true },\n    { input: Math.pow(2, 7), expectedOutput: false },\n]\n\nrunTests('isPrime', testCases, isPrime);\n"
+            ],
+            "outputs": []
+        }
+    ]
+}

@@ -1,0 +1,88 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "###### Funções usadas nos testes, não mexer"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// Tipos usados para o marucs testar seus exercícios, não altere os tipos desse bloco para não atrapalhar seus exercícios\ntype TestCase<TInput, TOutput> = {\n    input: TInput;\n    expectedOutput: TOutput;\n};\n\ntype TestFunction<TInput, TOutput> = (input: TInput) => TOutput;\n\nfunction runTests<TInput, TOutput>(\n    exerciseName: string,\n    testCases: TestCase<TInput, TOutput>[],\n    testFunction: TestFunction<TInput, TOutput>\n) {\n    try {\n\n        const messages: string[] = []\n        for (const { input, expectedOutput } of testCases) {\n            const result = testFunction(input);\n            const inputJson = JSON.stringify(input);\n            const resultJson = JSON.stringify(result);\n            const expectedOutputJson = JSON.stringify(expectedOutput);\n            const isCorrect = resultJson === expectedOutputJson;\n            messages.push(isCorrect ? `✅ ${exerciseName}: \\`${inputJson}\\` → \\`${expectedOutputJson}\\`` : `❌: ${exerciseName}: \\`${inputJson}\\` → Era para ser \\`${expectedOutputJson}\\`, mas deu: \\`${resultJson}\\``) // ✅\n        };\n        console.log(messages.join('\\n'));\n    } catch (error) {\n        console.error(error);\n    }\n}\n\nrunTests('isEven', [{ input: 2, expectedOutput: true }, { input: 3, expectedOutput: false }], (number: number) => number % 2 === 0);"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Exercício 0 - Fibonacci\n$ fib(n) = fib(n-1) + fib(n-2) $\n\n\nExercício que já resolvemos no passado"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function fibonacci(n: number): number  {\n    // Resolução pronta\n    if (n < 0) throw new Error('não existe fibonacci negativo');\n    if (n === 0) return 0;\n    if (n === 1) return 1;\n    return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\n// --- Não altere o código abaixo ---\n// Testes do marucs, eles verificam se a função sumArray está correta\nconst fibonacciTestCases: TestCase<Parameters<typeof fibonacci>[0], ReturnType<fibonacci>>[] = [\n    { input: 0, expectedOutput: 0 },\n    { input: 1, expectedOutput: 1 },\n    { input: 2, expectedOutput: 1 },\n    { input: 3, expectedOutput: 2 },\n    { input: 4, expectedOutput: 3 },\n    { input: 5, expectedOutput: 5 },\n    { input: 6, expectedOutput: 8 },\n    { input: 7, expectedOutput: 13 },\n    { input: 8, expectedOutput: 21 },\n    { input: 9, expectedOutput: 34 },\n    { input: 10, expectedOutput: 55 },\n    { input: 11, expectedOutput: 89 },\n    { input: 20, expectedOutput: 6765 },\n]\n\nrunTests('fibonacci', fibonacciTestCases, fibonacci);"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Exercício 1 - Soma de Array\nEscreva uma função sumArray que soma todos os números de um array.\n\nMotivação: cada dSFU vai ter uma quantidade de viewers diferente, precisamos saber o total de viewers na live, então somaremos todos os viewers de cada dSFU.\n\nExemplo: [1, 2, 3] → 6\n\n3 dSFUs, o primeiro com 1, o segundo com 2 e o terceiro com 3 viewers. \n\n**Total da live: 6 viewers**"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function sumViewers(dsfuViewers: number[]): number {\n    let sum = 0\n    // Seu código aqui, use for loop\n    return sum\n}\n\n// --- Não altere o código abaixo ---\n// Testes do marucs, eles verificam se a função sumArray está correta\nconst testCases: TestCase<Parameters<typeof sumViewers>[0], ReturnType<typeof sumViewers>>[] = [\n    { input: [1, 2, 3], expectedOutput: 6 },\n    { input: [1, 2, 3, 4], expectedOutput: 10 },\n    { input: [1, 2, 3, 4, 5], expectedOutput: 15 },\n    { input: [1, 2, 3, 4, 5, 6], expectedOutput: 21 },\n];\n\nrunTests(\"sumArray\", testCases, sumViewers);"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Exercício 2 - Reverso de String \nCrie uma função reverseString que retorna a string invertida.\nExemplo: \"hello\" → \"olleh\""
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function reverseString(input: string): string {\n    // Seu código aqui\n    return input\n}\n\n// --- Não altere o código abaixo ---\n// Testes do marucs, eles verificam se a função sumArray está correta\nconst reverseStringTestCases: TestCase<Parameters<typeof reverseString>[0], ReturnType<typeof reverseString>>[] = [\n    { input: 'abc', expectedOutput: 'cba' },\n    { input: 'hello', expectedOutput: 'olleh' },\n    { input: 'world', expectedOutput: 'dlrow' },\n    { input: 'marcus', expectedOutput: 'sucram' },\n    { input: 'javascript', expectedOutput: 'tpircsavaj' },\n    { input: '', expectedOutput: '' },\n];\n\nrunTests(\"reverseString\", reverseStringTestCases, reverseString);"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Exercício 3 - Contagem de Palavras \nEscreva uma função wordCount que conta o número de palavras em uma string.\nExemplo: \"hello world\" → 2"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function wordCount(input: string): number {\n    let count = 0\n    // Seu código aqui\n    return count\n}\n\n// --- Não altere o código abaixo ---\n// Testes do marucs, eles verificam se a função sumArray está correta\nconst wordCountTestCases: TestCase<Parameters<typeof wordCount>[0], ReturnType<typeof wordCount>>[] = [\n    { input: 'abc', expectedOutput: 1 },\n    { input: 'hello world', expectedOutput: 2 },\n    { input: 'hello world javascript', expectedOutput: 3 },\n    { input: 'marcus', expectedOutput: 1 },\n    { input: 'javascript', expectedOutput: 1 },\n    { input: '', expectedOutput: 0 },\n];\n\nrunTests(\"wordCount\", wordCountTestCases, wordCount);"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Exercício 4 - Checar Palíndromo \nEscreva uma função isPalindrome que verifica se uma string é um palíndromo.\nExemplo: \"radar\" → true\n\n**Observação: espaços, hífens, etc não devem ser considerados**\n**Observação 2: maiúsculas não devem ser diferenciadas de minúsculas**"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function isPalindrome(str: string): boolean {\n    let isPalindrome = false\n    // Seu código aqui\n    return isPalindrome\n}\n\n// --- Não altere o código abaixo ---\n// Testes do marucs, eles verificam se a função sumArray está correta\nconst isPalindromeTestCases: TestCase<Parameters<typeof isPalindrome>[0], ReturnType<typeof isPalindrome>>[] = [\n    { input: 'abc', expectedOutput: false },\n    { input: 'hello', expectedOutput: false },\n    { input: 'world', expectedOutput: false },\n    { input: 'marcus', expectedOutput: false },\n    { input: 'javascript', expectedOutput: false },\n    { input: 'abba', expectedOutput: true },\n    { input: 'radar', expectedOutput: true },\n    { input: 'osso', expectedOutput: true },\n    { input: 'Ame o poema', expectedOutput: true },\n    { input: 'A mala nada na lama', expectedOutput: true },\n    { input: 'A torre da derrota', expectedOutput: true },\n    { input: 'A cara rajada da jararaca', expectedOutput: true },\n    { input: 'Socorram-me, subi no ônibus em Marrocos', expectedOutput: true },\n    { input: 'Anotaram a data da maratona', expectedOutput: true },\n    { input: 'A grama é amarga', expectedOutput: true },\n    { input: 'A dama admirou o rim da amada', expectedOutput: true },\n    { input: 'A base do teto desaba', expectedOutput: true },\n];\n\nrunTests(\"isPalindrome\", isPalindromeTestCases, isPalindrome);"
+            ],
+            "outputs": []
+        }
+    ]
+}
