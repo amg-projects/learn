@@ -4,60 +4,70 @@
 // Sua missão é adicionar os tipos necessários para que o código compile com sucesso.
 
 // Exemplo:
-// Antes do exercício:
-function exercicio1(name) {
+// Antes do exercício: (Erro de compilação)
+function exercicio1(name): string {
     // ...
+    return `Olá, ${name}`;
 }
 
-// Depois do exercício:
-function exercicio1Resolvido(name: string) {
+// Depois do exercício: (Código corrigido)
+function exercicio1Resolvido(name: string): string {
     // ...
+    return `Olá, ${name}`;
 }
 
 // --------------------------------------------------------------------------------------------
 
 // Resolva os erro de tipagem das linhas abaixo
 // Exercício 1
-function adicionaSaudacao(name) {
+function adicionaSaudacao(name): string {
     return `Olá, ${name}`;
 }
 
 // Exercício 2
-function soma(a, b) {
+function soma(a, b): number {
     return a + b;
 }
 
-// Exercício 3
-function getArrayLength(arr) {
-    return arr.length;
+// Exercício 3 (dica: veja os testes para entender qual o tipo do elemento)
+function getArrayLength(lista): number {
+    return lista.length;
 }
 
 // Exercício 4
 type User = { name: string, age: number };
-function getUserName(user) {
+function getUserName(user): string {
     return user.name;
 }
 
+// Testes: não apague as linhas abaixo
+adicionaSaudacao('Marcus') === 'Olá, Marcus';   
+soma(1, 2) === 3;
+getArrayLength(['a', 'b', 'c']) === 3;
+getUserName({ name: 'Marcus', age: 26 }) === 'Marcus';
+
 // --------------------------------------------------------------------------------------------
-// TESTES para verificar se a resolução está correta
+// --------------------------------------------------------------------------------------------
+// SPOILERS --- SPOLIERS --- SPOILERS --- SPOILERS --- SPOILERS --- SPOILERS --- SPOILERS
+// --------------------------------------------------------------------------------------------
 // --------------------------------------------------------------------------------------------
 
-type IsAny<T> = 0 extends (1 & T) ? true : false;
-type Assert<T, Expected> = IsAny<T> extends true
-    ? false // Se T for `any`, falha
-    : T extends Expected
-    ? (Expected extends T ? true : false)
-    : false;
 
-// Solução esperada
-type Expected = (name: string) => string;
 
-// Aluno cria o tipo:
-type User2 = typeof adicionaSaudacao;
 
-// Teste
-const isCorrectSignature: Assert<User2, Expected> = true;
 
-type ExpectedParam1 = anyt;
-type UserParam1 = Parameters<typeof adicionaSaudacao>[0];
-const isCorrectParameter: Assert<UserParam1, ExpectedParam1> = true;
+
+// Para ter certeza que estão certos, verifique as linhas abaixo (lembre-se de instalar a extensão recomendada)
+adicionaSaudacao // =>
+// Correto:           function adicionaSaudacao(name: string): string
+
+soma // =>
+// Correto: function soma(a: number, b: number): number
+
+getArrayLength // =>
+// Correto:         function getArrayLength(lista: string[]): number
+
+getUserName // =>
+// Correto:       function getUserName(user: User): string
+
+// Se você fez todos os exercícios, parabéns!
