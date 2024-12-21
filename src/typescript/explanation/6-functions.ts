@@ -2,7 +2,7 @@
 
 // Uma função normal:
 
-function soma(a: number, b: number): number {
+function sum1(a: number, b: number): number {
     //         ^          ^        ^
     //         |          |        | Retorno da função é do tipo number
     //         |          |
