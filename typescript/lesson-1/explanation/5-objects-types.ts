@@ -67,7 +67,7 @@ const dsfusDisponiveis: DSFU[] = [
     // Isso acontece porque o TypeScript inferiu o tipo DSFU para o array dsfusDisponiveis
     {
         // Aperte Ctrl + Espaço aqui dentro
-    }, // Ta dando erro porque não passamos todas as propriedades necessárias (tentar passar todas as propriedades)
+    }, // Ta dando erro porque não passamos todas as propriedades necessárias (tente passar todas as propriedades)
 ]
 
 const melhorDSFU = obterMelhorDSFU(dsfusDisponiveis)

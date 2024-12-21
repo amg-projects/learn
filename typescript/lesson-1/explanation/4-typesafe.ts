@@ -8,11 +8,11 @@ const usersAgain = ['user1', 'user2', 'user3', 'user4', 'user5']
 
 // E queremos exibir os favoritos de todos eles.
 const favoritesInTS = [
-    getFavorites(usersInSidebar[0]),
-    getFavorites(usersInSidebar[1]),
-    getFavorites(usersInSidebar[2]),
-    getFavorites(usersInSidebar[3]),
-    getFavorites(usersInSidebar[4])
+    getFavorites(usersAgain[0]),
+    getFavorites(usersAgain[1]),
+    getFavorites(usersAgain[2]),
+    getFavorites(usersAgain[3]),
+    getFavorites(usersAgain[4])
 ]
 
 console.log(favoritesInTS) // [[1, 2, 3], [1], undefined, undefined, undefined] 
