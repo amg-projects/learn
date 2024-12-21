@@ -1,7 +1,5 @@
 import { funcaoQuePegaDadoDoBackend } from "./_apoio";
 
-
-
 /***
  * ANTES DE COMEÇAR
  * INSTALE ESSA EXTENSÃO NO SEU VSCODE:
