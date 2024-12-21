@@ -125,3 +125,12 @@ const incompletos: DSFUIncompleto[] = [
 // Falta a propriedade conectado
 obterMelhorDSFU(incompletos)
                     // ^?   
+
+
+// Outra coisa:
+// É possíel "extraír" o tipo de uma propriedade de um objeto
+// Usamos a sintaxe objeto[propriedade] para isso
+type Nome = Pessoa['nome']
+    // ^?
+type Idade = Pessoa['idade']
+    // ^?
