@@ -12,11 +12,11 @@ const resultado1 = pegaPrimeiroElemento([1, 2, 3, 4, 5]) // Pega o primeiro elem
 
 // Uma solução que você pode pensar é criar uma função para cada tipo de array que você quer pegar o primeiro elemento
 
-function pegaPrimeiroElementoString(strings: string[]): string {
+function pegaPrimeiroElementoString(strings: string[]): string | undefined {
     return strings[0]
 }
 
-function pegaPrimeiroElementoBooleanos(booleanos: boolean[]): boolean {
+function pegaPrimeiroElementoBooleanos(booleanos: boolean[]): boolean | undefined {
     return booleanos[0]
 }
 
@@ -38,7 +38,7 @@ const resultado = pegaPrimeiroElementoAny(elementos)
 
 // A solução para esse problema é usar generics
 // AVISO: Generics são um conceito mais avançado, então não se preocupe se não entender de primeira
-function pegaPrimeiroElementoGenerics<T>(array: T[]): T {
+function pegaPrimeiroElementoGenerics<T>(array: T[]): T | undefined { 
     return array[0]
 }
 

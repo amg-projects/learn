@@ -18,8 +18,8 @@ const favoritesInTS = [
 console.log(favoritesInTS) // [[1, 2, 3], [1], undefined, undefined, undefined] 
 // (undefined para user3, user4 e user5 significa que eles não têm favoritos)
 
-for (let i = 0; i < users.length; i++) { // Vamos exibir a quantidade de favoritos de cada usuário.
-    const usuarioAtual = users[i] // Pega o usuário atual passa pelos users de 1 a 5
+for (let i = 0; i < usersAgain.length; i++) { // Vamos exibir a quantidade de favoritos de cada usuário.
+    const usuarioAtual = usersAgain[i] // Pega o usuário atual passa pelos users de 1 a 5
     const favs = favoritesInTS[i] // Pega os favoritos do usuário atual (pega a lista dentro da lista)
 
     // O typescript sabe que opde ser undefined, então ele dá erro

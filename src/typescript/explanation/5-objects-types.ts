@@ -53,7 +53,7 @@ type DSFU = {
     conectado: boolean
 }
 
-function obterMelhorDSFU(dsfusDisponiveis: DSFU[]): DSFU {
+function obterMelhorDSFU(dsfusDisponiveis: DSFU[]): DSFU | undefined {
     // Implementação da função
     // Por enquanto vamos pegar o primeiro da lista só pra simplificar
     return dsfusDisponiveis[0]
